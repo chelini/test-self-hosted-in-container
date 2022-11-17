@@ -38,14 +38,18 @@ jobs:
       
       - name: GCC
         run: |
-          ls -la
+          apt update && apt install gcc-6
+      - name: check GCC
+        run: |
+          gcc --version
+      
   build_alpine:
     # The type of runner that the job will run on
     runs-on: self-hosted
     
     # run on Ubuntu
     container:
-      image: alpine
+      image: ubuntu
       env:
         NODE_ENV: development
       ports:
@@ -59,7 +63,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       
-      - name: GCC
+      - name: install GCC
         run: |
-          ls -la
+          apt update && apt install gcc-6
+      - name: check GCC
+        run: |
+          gcc --version
       
