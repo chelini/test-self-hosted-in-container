@@ -38,12 +38,12 @@ jobs:
       
       - name: GCC
         run: |
-          apt update && apt install gcc-9
+          apt update && apt install gcc-9 -y
       - name: check GCC
         run: |
           gcc --version
       
-  build_alpine:
+  build_ubuntu_2:
     # The type of runner that the job will run on
     runs-on: self-hosted
     
@@ -65,7 +65,7 @@ jobs:
       
       - name: install GCC
         run: |
-          apt update && apt install gcc-10
+          apt update && apt install gcc-10 -y
       - name: check GCC
         run: |
           gcc --version
