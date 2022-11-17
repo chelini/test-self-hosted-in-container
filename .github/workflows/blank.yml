@@ -46,4 +46,4 @@ jobs:
           echo test, and deploy your project.
       - name: GCC
         run: |
-          echo $pwd
+          ls -la
