@@ -38,7 +38,9 @@ jobs:
       
       - name: GCC
         run: |
-          apt update && apt install gcc-9 -y
+          apt install build-essential && 
+          apt update && apt install gcc-9 -y &&
+          update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 60 --slave /usr/bin/g++ g++ /usr/bin/g++-9
       - name: check GCC
         run: |
           gcc --version
@@ -65,7 +67,9 @@ jobs:
       
       - name: install GCC
         run: |
-          apt update && apt install gcc-10 -y
+          apt install build-essential && 
+          apt update && apt install gcc-10 -y &&
+          update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 60 --slave /usr/bin/g++ g++ /usr/bin/g++-10
       - name: check GCC
         run: |
           gcc --version
