@@ -39,3 +39,27 @@ jobs:
       - name: GCC
         run: |
           ls -la
+  build2:
+    # The type of runner that the job will run on
+    runs-on: self-hosted
+    
+    # run on Ubuntu
+    container:
+      image: alpine
+      env:
+        NODE_ENV: development
+      ports:
+        - 80
+      volumes:
+        - my_docker_volume:/volume_mount
+      options: --cpus 2
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      
+      - name: GCC
+        run: |
+          ls -la
+      
