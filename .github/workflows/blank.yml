@@ -38,7 +38,7 @@ jobs:
       
       - name: GCC
         run: |
-          apt update && apt install gcc-6
+          apt update && apt install gcc-9
       - name: check GCC
         run: |
           gcc --version
@@ -65,7 +65,7 @@ jobs:
       
       - name: install GCC
         run: |
-          apt update && apt install gcc-6
+          apt update && apt install gcc-10
       - name: check GCC
         run: |
           gcc --version
